@@ -12,7 +12,7 @@ var stateTitle={
         this.title = game.add.tileSprite(0, game.height-640,game.width, 640, 'title');
         this.title.autoScroll(-100,0);
 
-        this.btnStart=game.add.button(110,400,'button',this.startGame,this,0,1,0);
+        this.btnStart=game.add.button(110,400,'button',this.startGame,this,0,1,1);
         this.btnStore=game.add.button(110,480,'button',this.Store,this,6,7,6);
         this.logo = game.add.sprite(60, 150, 'logo');
 
