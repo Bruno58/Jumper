@@ -28,6 +28,7 @@ var MainState = {
 		
 		this.background = this.game.add.sprite(0, 0, 'background');
 		
+		this.currentHighScore = localStorage.getItem("highscore");
 
 		
 
@@ -93,13 +94,13 @@ var MainState = {
 		
 
 		////////////////////////////////////////////////////////////////////////// Highscore counter
-		highScoreText.text = 'HS: ' + localStorage.getItem("highscore");
+		highScoreText.text = 'HS: ' + this.currentHighScore;
 
 
             {
-         if (this.score > localStorage.getItem("highscore")) 
+         if (this.score > this.currentHighScore) 
             { 
-                localStorage.setItem("highscore", this.score);
+                this.currentHighScore = this.score;
             }
         }
 	
@@ -185,9 +186,9 @@ hitPipe: function() {
 
     if (this.bird.alive == false)
         return;
-	else {
-    	game.state.start("StateOver");
-    }
+
+    localStorage.setItem("highscore", this.score);
+
     // Set the alive property of the bird to false
     this.bird.alive = false;
 
@@ -198,6 +199,8 @@ hitPipe: function() {
     this.pipes.forEach(function(p){
         p.body.velocity.x = 0;
     }, this);
+
+    	game.state.start("StateOver");
    
   
 
