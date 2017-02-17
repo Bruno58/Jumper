@@ -1,3 +1,4 @@
+<h1>Follow Me here in my road to Master Developer</h1> http://www.bruno58.com
 # Jumper
 Game Dev
 This Is a Dummy game Im using to perfect a game I have 
